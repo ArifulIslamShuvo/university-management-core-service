@@ -54,7 +54,16 @@ const getAllFromDB = async (
     where: whereCondition,
     skip,
     take: limit,
+    orderBy:
+      options.sortBy && options.sortOrder
+        ? {
+            [options.sortBy]: options.sortOrder,
+          }
+        : {
+            createdAt: 'desc',
+          },
   });
+
   const total = await prisma.academicFaculty.count();
   return {
     meta: {
@@ -65,7 +74,16 @@ const getAllFromDB = async (
     data: result,
   };
 };
+const getDataById = async (id: string): Promise<AcademicFaculty | null> => {
+  const result = await prisma.academicFaculty.findUnique({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
 export const AcademicFacultyService = {
   insertIntoDB,
   getAllFromDB,
+  getDataById,
 };
