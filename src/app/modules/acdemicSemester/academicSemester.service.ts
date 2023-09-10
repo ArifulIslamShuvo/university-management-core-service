@@ -42,11 +42,10 @@ const getAllFromDB = async (
     });
   }
 
-  const whereConditions: Prisma.AcademicSemesterWhereUniqueInput =
+  const whereCondition: Prisma.AcademicDepartmentWhereInput =
     andConditions.length > 0 ? { AND: andConditions } : {};
-
   const result = await prisma.academicSemester.findMany({
-    where: whereConditions,
+    where: whereCondition,
     skip,
     take: limit,
     orderBy:

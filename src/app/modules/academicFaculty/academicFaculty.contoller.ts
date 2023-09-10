@@ -21,8 +21,6 @@ const getAllFromDB = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, academicFacultyFilterableFields);
   const options = pick(req.query, ['limit', 'page', 'sortBy', 'sortOrder']);
   const result = await AcademicFacultyService.getAllFromDB(filters, options);
-  console.log('filters', filters);
-  console.log('options', options);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
