@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AcademicFaculty, Prisma } from '@prisma/client';
-import { date } from 'zod';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
@@ -13,7 +12,6 @@ import { IacademicFacultyfilterRequest } from './academicFaculty.interface';
 const insertIntoDB = async (
   data: AcademicFaculty
 ): Promise<AcademicFaculty> => {
-  console.log(date);
   const result = await prisma.academicFaculty.create({
     data,
   });
