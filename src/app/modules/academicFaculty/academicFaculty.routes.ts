@@ -13,5 +13,12 @@ router.post(
   validateRequest(AcademicFacultyValidation.create),
   AcademicFacultyController.insertIntoDB
 );
+router.patch(
+  '/:id',
+  validateRequest(AcademicFacultyValidation.update),
+  AcademicFacultyController.updateOneInDB
+);
+
+router.delete('/:id', AcademicFacultyController.deleteByIdFromDB);
 
 export const academicFacultyRoutes = router;
