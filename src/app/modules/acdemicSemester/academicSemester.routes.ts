@@ -11,5 +11,10 @@ router.post(
   validateRequest(AcademicSemesterValidation.create),
   AcademicSemesterController.insertIntoDB
 );
+router.patch(
+  '/:id',
+  validateRequest(AcademicSemesterValidation.update),
+  AcademicSemesterController.updateOneInDB
+);
 
 export const AcademicSemesterRouter = router;

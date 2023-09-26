@@ -39,8 +39,19 @@ const getDataById = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const updateOneInDB = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await AcademicSemesterService.updateOneInDB(id, req.body);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic Semster updated successfully',
+    data: result,
+  });
+});
 export const AcademicSemesterController = {
   insertIntoDB,
   getAllFromDB,
   getDataById,
+  updateOneInDB,
 };
