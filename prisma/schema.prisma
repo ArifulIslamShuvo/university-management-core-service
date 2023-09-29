@@ -85,7 +85,7 @@ model Faculty {
   middleName   String
   profileImage String
   email        String
-  contactNo    Int
+  contactNo    String
   gender       String
   bloodGroup   String
   designation  String
@@ -96,7 +96,7 @@ model Faculty {
   academicFacultyId String
   academicDepartment   AcademicDepartment @relation(fields: [academicDepartmentId], references: [id])
   academicDepartmentId String
-  @@map("faculties")
+  @@map("faculties") 
 }
 
 model Building {

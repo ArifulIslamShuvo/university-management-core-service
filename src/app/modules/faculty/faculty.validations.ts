@@ -20,7 +20,7 @@ const create = z.object({
     email: z.string({
       required_error: 'Email is required',
     }),
-    contactNo: z.number({
+    contactNo: z.string({
       required_error: 'Contact no is required',
     }),
     gender: z.string({

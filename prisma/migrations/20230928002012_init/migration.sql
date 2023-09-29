@@ -1,14 +1,4 @@
 -- CreateTable
-CREATE TABLE "buildings" (
-    "id" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "buildings_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "rooms" (
     "id" TEXT NOT NULL,
     "roomNumber" TEXT NOT NULL,
